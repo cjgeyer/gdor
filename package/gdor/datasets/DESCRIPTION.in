@@ -1,0 +1,8 @@
+Package: datasets
+Version: @VERSION@
+Priority: gdor
+Title: The gdor datasets
+Author: Charles Geyer, UCLA Academic Technology Services
+Maintainer: Daniel J. Eck <eckxx049@umn.edu>
+Description: gdor datasets
+License: X11 
