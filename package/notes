@@ -1,0 +1,36 @@
+# to add extra compiler warnings
+# note that file myMakevars must be a copy of gdor/src/Makevars
+#     with extra stuff added
+export R_MAKEVARS_USER=`pwd`/myMakevars
+
+# if version number has changed
+rm *.tar.gz
+
+# basic checking
+R CMD build gdor
+R CMD check gdor_*.tar.gz
+
+# build for CRAN submission
+R CMD build --compact-vignettes gdor
+# this check must be done by R-devel before CRAN submission
+~/local/devel/bin/R CMD check --as-cran gdor_*.tar.gz
+
+# look at files packed in tarball for any weird stuff
+tar ztvf gdor_*.tar.gz | sed 's/^.*gdor\///' | sort
+
+# export usually not necessary
+export VALGRIND_OPTS="--tool=memcheck"
+R CMD check --no-vignettes --use-valgrind gdor
+
+# to install
+R CMD INSTALL gdor_*.tar.gz
+
+# to count lines of code
+cloc gdor_*.tar.gz
+# except the version with Ubuntu 14.04 doesn't understand R
+# get current version, which is just perl script
+# somewhere, say in ~/bin if that is in your path do
+wget https://github.com/AlDanial/cloc/releases/download/1.74/cloc-1.74.pl
+mv cloc-1.74.pl cloc
+chmod +x cloc
+Then above will do the right thing
