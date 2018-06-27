@@ -30,3 +30,7 @@ R generic function `anova`).
 Confidence intervals are not yet implemented but soon will be (by the `gdor`
 method of the R generic function `confint`).
 
+Log-linear models for categorical data analysis are handled by treating
+them as Poisson regression (using the well know fact that Poisson sampling,
+multinomial sampling, and product multinomial sampling have the same
+MLE and the same asymptotic distributions of the likelihood ratio test).
