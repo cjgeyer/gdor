@@ -3,12 +3,9 @@ on CRAN again)
 
 GDOR stands for "generalized direction of recession", a term introduced by
 
->  Geyer, Charles J. (2009).
->
->  Likelihood inference in exponential families and directions of recession.
->
->  *Electronic Journal of Statistics*, 3, 259-289.
->
+>  Geyer, Charles J. (2009).  
+>  Likelihood inference in exponential families and directions of recession.  
+>  *Electronic Journal of Statistics*, 3, 259-289.  
 >  http://projecteuclid.org/euclid.ejs/1239716414
 
 which also covers the methodology used in this R package.
